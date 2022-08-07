@@ -15,7 +15,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
+    
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/victorb26/battle-cards.git"
