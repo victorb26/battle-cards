@@ -1,11 +1,19 @@
-import sqlite3 from "sqlite3";
-const db = new sqlite3.Database("./src/data/database.db");
+import mongoose from "mongoose";
 
-process.on("SIGINT", () =>
-  db.close(() => {
-    console.log("DB Finished!");
-    process.exit(0);
-  })
-);
+const db = async () => {
+  const DB_PASSWORD = "xWM6RabJfryAcz0q";
+  const DB_USER = "victor3";
+  //mongodb+srv://victor3:<password>@apicluster.iupdtnb.mongodb.net/?retryWrites=true&w=majority
+try{
+  await mongoose.connect(
+      `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.iupdtnb.mongodb.net/?retryWrites=true&w=majority`
+    ); 
+    console.log("Sucess! Connect to Mongodb!");}
+
+    
+    catch(err){
+        console.log(err);
+    };
+};
 
 export default db;

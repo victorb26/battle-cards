@@ -1,20 +1,15 @@
-import express from 'express';
-import cards from './cardsRoutes.js';
+import express from "express";
+import cards from "./cardsRoutes.js";
 
+const routes = (app) => {
+  app.route("/").get((req, res) => {
+    res.json({
+      statusCode: 200,
+      message: "Welcome to Pokemon Battle Cards!",
+    });
+  });
 
-const routes = app => {
-    app.route('/').get((req, res) => {
-        res.json({
-            "statusCode": 200,
-            "message": "Welcome to Pokemon Battle Cards!"
-        });
-    })
-
-    app.use(
-        express.json(),
-        cards
-        
-    )
-}
+  app.use(express.json(), cards);
+};
 
 export default routes;
