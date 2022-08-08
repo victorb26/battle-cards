@@ -6,7 +6,7 @@ import routes from "./routes/route.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
-routes(app);
+routes(app, "/");
 
 
 export default app;

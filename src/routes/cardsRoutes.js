@@ -2,9 +2,9 @@ import express from "express";
 
 const router = express.Router();
 
-router.get("/pokemons");
-router.post("/pokemon");
-router.patch("/pokemon/:id");
-router.delete("/pokemon/:_id");
+router.get("/characters");
+router.post("/character");
+router.patch("/character/:id");
+router.delete("/character/:_id");
 
 export default router;
