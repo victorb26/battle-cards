@@ -5,7 +5,7 @@ const routes = (app) => {
   app.route("/").get((req, res) => {
     res.json({
       statusCode: 200,
-      message: "Welcome to Pokemon Battle Cards!",
+      message: "Welcome to Multi Versus Battle Cards!",
     });
   });
 

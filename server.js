@@ -9,7 +9,6 @@ const server = app.listen(port, async () => {
   console.log(`Server listening on port http://localhost:${port}/`);
 });
 
-process.on("SIGINT", () => {
-  server.close();
+process.on("SIGINT", () => {server.close();
   console.log("App Finished!");
 });
