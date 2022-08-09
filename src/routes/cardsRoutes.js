@@ -3,8 +3,8 @@ import  CardController  from "../controllers/cardController.js";
 const router = express.Router();
 
 router.get("/characters", CardController.getAll);
-router.post("/character", CardController.insertCharacter);
+router.post("/character", CardController.insert);
 router.patch("/character/:id", CardController.update);
-router.delete("/character/:_id");
+router.delete("/character/:id",CardController.delete);
 
 export default router;
