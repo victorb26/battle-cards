@@ -1,6 +1,6 @@
 import response  from "express";
 
-export const badRequest = (res(response), err (string));()=>
+export const badRequest = (res, err);()=>
   res.status(400).json({
     err,
   });

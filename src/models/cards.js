@@ -1,18 +1,18 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import pkg from 'mongoose';
+const { Schema } = pkg;
 
-const cardSchema = new mongoose.Schema({
-  _id: { type: Number, required: true },
-  name: { type: String, required: true },
+const cardSchema = new Schema({
+  _id: { type: Number },
+  name: { type: String },
   attributes: {
-    hp: { type: Number, required: true },
-    attack: { type: Number, required: true },
-    defense: { type: Number, required: true },
-    speed: { type: Number, required: true },
-    specialAttack: { type: Number, required: true },
-    specialDefense: { type: Number, required: true },
-    _id: false,
+    hp: { type: Number },
+    attack: { type: Number },
+    defense: { type: Number },
+    speed: { type: Number },
+    specialAttack: { type: Number },
+    specialDefense: { type: Number },
   },
-  required: true,
 });
 
 const cardModel = mongoose.model("card", cardSchema);

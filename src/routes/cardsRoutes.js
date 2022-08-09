@@ -1,8 +1,8 @@
 import express from "express";
-
+import  CardController  from "../controllers/cardController.js";
 const router = express.Router();
 
-router.get("/characters");
+router.get("/characters", CardController.getAll);
 router.post("/character");
 router.patch("/character/:id");
 router.delete("/character/:_id");
