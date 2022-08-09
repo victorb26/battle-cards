@@ -1,15 +1,15 @@
-import response  from "express";
+import Response  from "express";
 
-export const badRequest = (res, err);()=>
+export const badRequest = (Response, Error);()=>
   res.status(400).json({
     err,
   });
 
-export const notFound = (res(response));() => res.sendStatus(404);
+export const notFound = (Response);() => res.sendStatus(404);
 
-export const okay = (res(response));()=> res.sendStatus(200);
+export const okay = (Response);()=> res.sendStatus(200);
 
-export const internalServerError = (res(response), err (string));()=>
+export const internalServerError = (Response, Error);()=>
   res.status(500).json({
     err: err.message
   });

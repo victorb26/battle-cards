@@ -3,7 +3,7 @@ import  CardController  from "../controllers/cardController.js";
 const router = express.Router();
 
 router.get("/characters", CardController.getAll);
-router.post("/character");
+router.post("/character", CardController.insertCharacter);
 router.patch("/character/:id");
 router.delete("/character/:_id");
 
