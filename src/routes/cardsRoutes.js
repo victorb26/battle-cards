@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get("/characters", CardController.getAll);
 router.post("/character", CardController.insertCharacter);
-router.patch("/character/:id");
+router.patch("/character/:id", CardController.update);
 router.delete("/character/:_id");
 
 export default router;

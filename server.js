@@ -10,5 +10,5 @@ const server = app.listen(port, async () => {
 });
 
 process.on("SIGINT", () => {server.close();
-  console.log("App Finished!");
+  console.log("Server Finished!");
 });
