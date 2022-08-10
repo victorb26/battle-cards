@@ -8,6 +8,18 @@ export default class CardController {
     });
   };
 
+  static getId = (req, res) => {
+        const id = req.params.id;
+    
+        cardModel.findById(id, (err, cardModel) => {
+          if(err) {
+            res.status(404).json({message: `ID not found`})
+          } else {
+            res.status(200).json(cardModel);
+          }
+        })
+      }
+
   static insert = (req, res) => {
     const character = new cardModel(req.body);
     character.save((err) => {
@@ -25,11 +37,11 @@ export default class CardController {
     const id = req.params.id;
     cardModel.findByIdAndUpdate(id, { $set: req.body }, (err) => {
       if (!err) {
-        res.status(201).send({ message: `Character updated successfully` });
+        res.status(201).json({ message: `Character updated successfully` });
       } else {
         res
           .status(404)
-          .send({ message: `Something's wrong!/Character notFound` });
+          .json({ message: `Something's wrong!/Character notFound` });
       }
     });
   };
@@ -39,11 +51,11 @@ export default class CardController {
 
     cardModel.findByIdAndDelete(id, (err) => {
       if (!err) {
-        res.status(201).send({ message: `Character removed sucessfully!` });
+        res.status(201).json({ message: `Character removed sucessfully!` });
       } else {
         res
           .status(404)
-          .send({ message: `Something's wrong!/Could not delete character` });
+          .json({ message: `Something's wrong!/Could not delete character` });
       }
     });
   };
