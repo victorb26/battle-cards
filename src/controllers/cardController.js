@@ -15,7 +15,7 @@ export default class CardController {
     let id = req.params.id;
     cardModel.findById(id, (err, cardModel) => {
       if (err) {
-        res.status(400).json({ message: `Error :()` });
+        res.status(404).json({ message: `Error :()` });
       } else {
         res.status(200).json(cardModel);
       }
