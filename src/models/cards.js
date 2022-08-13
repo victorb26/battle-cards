@@ -12,7 +12,7 @@ const cardSchema = new mongoose.Schema(
         speed: { type: Number, required: true },
         specialAttack: { type: Number, required: true },
         specialDefense: { type: Number, required: true },
-        _id: {required: false },
+        _id: { required: false },
       },
       required: true,
     },

@@ -1,5 +1,6 @@
 import cardModel from "../models/Cards.js";
 
+
 export default class CardController {
   static getAll = (req, res) => {
     cardModel.find((err, cardModel) => {
@@ -54,4 +55,5 @@ export default class CardController {
       }
     });
   };
+
 }
