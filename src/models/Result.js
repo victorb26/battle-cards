@@ -1,15 +1,21 @@
-export class ResultModel  {
-   
-  
-    constructor(winner, loser, pokemon, hp, attack, defense, specialAttack, specialDefense, speed) {
-      this.playerWinner = winner;
-      this.playerLoser = loser;
-      this.pokemon = pokemon;
-      this.hp = hp;
-      this.attack = attack;
-      this.defense = defense;
-      this.specialAttack = specialAttack;
-      this.specialDefense = specialDefense;
-      this.speed = speed;
-    }
-  }
+import mongoose from "mongoose";
+
+const resultSchema = new mongoose.Schema(
+  {
+    playerWinner: { type: Number },
+    playerLoser: { type: Number },
+    details: {
+      hp: { type: Number },
+      attack: { type: Number },
+      defense: { type: Number },
+      speed: { type: Number },
+      specialAttack: { type: Number },
+      specialDefense: { type: Number },
+    },
+  },
+  { versionKey: false }
+);
+
+const resultModel = mongoose.model("resultModel", resultSchema);
+
+export default resultModel;
