@@ -1,6 +1,5 @@
 import cardModel from "../models/dbCards.js";
 
-
 export default class CardController {
   static getAll = (req, res) => {
     cardModel.find((err, cardModel) => {
