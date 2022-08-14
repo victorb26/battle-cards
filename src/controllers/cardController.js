@@ -1,4 +1,4 @@
-import cardModel from "../models/Cards.js";
+import cardModel from "../models/dbCards.js";
 
 
 export default class CardController {
