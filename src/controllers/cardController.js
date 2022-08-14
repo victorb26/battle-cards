@@ -27,7 +27,11 @@ export default class CardController {
     const character = new cardModel(req.body);
     character.save((err) => {
       if (err) {
-        res.status(404).json({ message: `Error! Insert all params!/Character already registered `});
+        res
+          .status(404)
+          .json({
+            message: `Error! Insert all params!/Character already registered `,
+          });
       } else {
         res.status(201).json({ message: `Sucess! Character has been added!` });
       }
@@ -38,7 +42,9 @@ export default class CardController {
     const id = req.params.id;
     cardModel.findByIdAndUpdate(id, { $set: req.body }, (err) => {
       if (err) {
-        res.status(404).json({ message: `Something's wrong!/Character notFound` });
+        res
+          .status(404)
+          .json({ message: `Something's wrong!/Character notFound` });
       } else {
         res.status(201).json({ message: `Character updated successfully` });
       }
@@ -49,11 +55,14 @@ export default class CardController {
     const id = req.params.id;
     cardModel.findByIdAndDelete(id, (err) => {
       if (err) {
-        res.status(404).json({ message: `Something's wrong!/Could not delete character` });
+        res
+          .status(404)
+          .json({ message: `Something's wrong!/Could not delete character` });
       } else {
         res.status(201).json({ message: `Character removed sucessfully!` });
       }
     });
   };
 
+ 
 }
