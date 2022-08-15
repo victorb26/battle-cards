@@ -1,6 +1,6 @@
 import cardModel from "../models/dbCards.js";
 import compare from "../models/compare.js";
-import sum from "../models/sum.js";
+
 
 export default class BattleController {
   static battle = async (req, res) => {
@@ -61,11 +61,9 @@ export default class BattleController {
       resultSpecialDefense = result2.toObject()._id
     };
 
-
-    const power = sum(characStatus1, characStatus2);
     const FinalResult = compare(
-      power.charac1,
-      power.charac2,
+      charac1,
+      charac2,
       result1,
       result2,
       resultHp,
