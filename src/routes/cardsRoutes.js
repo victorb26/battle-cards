@@ -11,6 +11,7 @@ router.get("/character/:id", CardController.getId);
 router.get("/scores",ScoreController.scoreTotal);
 router.post("/character", CardController.insert);
 router.post("/battle", BattleController.battle);
+router.post("/reset",ScoreController.reset);
 router.patch("/character/:id", CardController.update);
 router.delete("/character/:id", CardController.delete);
 
