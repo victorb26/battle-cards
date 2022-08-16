@@ -1,3 +1,4 @@
+
 const compare = (
   object1,
   object2,
@@ -26,7 +27,6 @@ const compare = (
     resultSpecialAttack,
     resultSpecialDefense,
   ].filter((result) => result === result2.id);
-  
   if (person1.length > person2.length) {
     return {
       winner: result1.id,
@@ -40,7 +40,7 @@ const compare = (
         specialDefense: resultSpecialDefense,
       },
     };
-  } else if (person1.length < person2.length) {
+  } else if (person2.length > person1.length ) {
     return {
       winner: result2.id,
       loser: result1.id,
@@ -55,7 +55,7 @@ const compare = (
     };
   } else {
     return {
-      tie: true,
+      tied: true,
       details: {
         hp: resultHp,
         attack: resultAttack,
