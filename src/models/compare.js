@@ -1,5 +1,6 @@
 const compare = (
-  
+  object1,
+  object2,
   result1,
   result2,
   resultHp,
