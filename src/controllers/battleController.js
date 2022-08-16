@@ -81,6 +81,11 @@ export default class BattleController {
     );
 
     res.status(200).send({ FinalResult });
-
+    
+    if (result1._id == FinalResult.winner) {
+      await scoreModel.updateOne({ $inc: { playerOne: +1 } });
+    } else if (result2._id == FinalResult.winner) {
+      await scoreModel.updateOne({ $inc: { playerTwo: +1 } });
+    }
   };
 }
