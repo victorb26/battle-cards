@@ -14,8 +14,8 @@ export default class CardController {
   static getId = (req, res) => {
     let id = req.params.id;
     cardModel.findById(id, (err, cardModel) => {
-      if (err) {
-        res.status(404).json({ message: `Error :()` });
+      if (cardModel === null) {
+        res.status(404).json({ message: `ID notFound`  });
       } else {
         res.status(200).json(cardModel);
       }
