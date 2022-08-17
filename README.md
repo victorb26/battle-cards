@@ -54,7 +54,6 @@ $ npm start
 
 ## Rotas
 
----
 
 - **GET**
     - **Consulte todas as cartas já cadastradas**
