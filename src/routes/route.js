@@ -3,9 +3,8 @@ import cards from "./cardsRoutes.js";
 
 const routes = (app) => {
   app.route("/").get((req, res) => {
-    res.json({
-      statusCode: 200,
-      message: "Welcome to Multi Versus Battle Cards!",
+    res.status(200).json({
+      message: `Welcome to Multi Versus Battle Cards!`,
     });
   });
 
